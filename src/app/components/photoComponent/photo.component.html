@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <!-- Título -->
+    <h1 class="text-center mb-4">Selecciona tus fotos</h1>
+
+    <!-- Formulario para seleccionar archivos -->
+    <div class="d-flex justify-content-center mb-4">
+        <input type="file" multiple (change)="onFileSelected($event)" id="fileInput" class="d-none" />
+        <label for="fileInput" class="btn btn-primary">
+            Selecciona Fotos
+        </label>
+    </div>
+
+    <!-- Contenedor flex para previsualizar las imágenes -->
+    <div class="d-flex flex-wrap justify-content-center">
+        <div *ngFor="let img of imagenesPreview" class="position-relative m-2">
+            <img [src]="img" alt="Imagen seleccionada" class="img-thumbnail"
+                style="max-width: 200px; max-height: 200px; object-fit: cover;" />
+            <button type="button" class="btn btn-danger position-absolute top-0 start-100 translate-middle"
+                (click)="removeImage(img)" aria-label="Eliminar">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Botón para subir fotos -->
+    <div class="text-center mt-4">
+        <button type="button" class="btn btn-success" (click)="uploadPhotos()">
+            Subir Fotos
+        </button>
+    </div>
+</div>
