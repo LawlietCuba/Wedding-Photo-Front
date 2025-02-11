@@ -41,8 +41,6 @@ export class PhotoComponent {
       formData.append('imagenes', img, img.name); // Asegúrate de incluir el nombre del archivo si es necesario
     });
 
-    console.log(this.imagenes);
-
     this.photoService.uploadPhoto(formData).subscribe((response) => {
       console.log('Fotos subidas:', response);
       alert('Fotos subidas con éxito');
