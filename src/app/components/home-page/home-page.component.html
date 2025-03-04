@@ -1,1 +1,57 @@
-<p>home-page works!</p>
+<!-- Recent Photos Section -->
+<section id="recent-photos" class="recent-photos section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Recent Photos</h2>
+    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": {
+            "delay": 5000
+          },
+          "slidesPerView": "auto",
+          "centeredSlides": true,
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          },
+          "breakpoints": {
+            "320": {
+              "slidesPerView": 1,
+              "spaceBetween": 0
+            },
+            "768": {
+              "slidesPerView": 3,
+              "spaceBetween": 20
+            },
+            "1200": {
+              "slidesPerView": 5,
+              "spaceBetween": 20
+            }
+          }
+        }
+      </script>
+      <div class="swiper-wrapper align-items-center">
+        <!-- Use NgFor to loop over photos -->
+        <div *ngFor="let photo of photos" class="swiper-slide">
+          <p>{{logPhoto}}</p>
+          <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" [href]="photo"><img [src]="photo"
+                class="img-fluid" alt=""></a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+
+</section><!-- /Recent Photos Section -->

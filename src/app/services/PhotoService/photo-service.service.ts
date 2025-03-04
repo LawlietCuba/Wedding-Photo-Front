@@ -11,6 +11,12 @@ export class PhotoService {
 
   constructor(private http: HttpClient) {}
 
+  getAllPhotos() {
+    // console.log(`${api_url}/${this.photo_URL}`);
+    // let x: any = this.http.get(`${api_url}/${this.photo_URL}`);
+    // console.log(x);
+    return this.http.get(`${api_url}/${this.photo_URL}`);
+  }
   uploadPhoto(photoData: FormData) {
     return this.http.post(`${api_url}/${this.photo_URL}`, photoData);
   }
