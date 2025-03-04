@@ -4,12 +4,11 @@ import { CommonModule } from '@angular/common';
 import { provideHttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-photo',
-  standalone: true,
-  imports: [CommonModule],
-  providers: [PhotoService],
-  templateUrl: './photo.component.html',
-  styleUrls: ['./photo.component.css'],
+    selector: 'app-photo',
+    imports: [CommonModule],
+    providers: [PhotoService],
+    templateUrl: './photo.component.html',
+    styleUrls: ['./photo.component.css']
 })
 export class PhotoComponent {
   imagenes: File[] = [];
